@@ -1,0 +1,6 @@
+2024/02/04 15:44:07 [alert] 185#185: 512 worker_connections are not enough
+2024/02/04 15:44:07 [error] 186#186: *955 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "localhost", referrer: "http://localhost/"
+2024/02/04 15:55:49 [error] 185#185: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.22.0.1, server: nginxproxymanager, request: "GET /api/settings HTTP/1.1", upstream: "http://127.0.0.1:3000/settings", host: "127.0.0.1:81", referrer: "http://127.0.0.1:81/settings"
+2024/02/04 16:33:48 [warn] 218#218: 512 worker_connections are not enough, reusing connections
+2024/02/04 16:33:48 [alert] 218#218: 512 worker_connections are not enough
+2024/02/04 16:33:48 [error] 217#217: *1093 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "vaipet.com.br", referrer: "http://vaipet.com.br/"
