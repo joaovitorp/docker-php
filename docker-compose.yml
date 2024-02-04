@@ -1,15 +1,5 @@
 version: '3.8'
 services:
-  nproxy:
-    image: 'jc21/nginx-proxy-manager:latest'
-    restart: unless-stopped
-    ports:
-      - '8280:80'
-      - '8081:81'
-      - '8443:443'
-    volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
   web:
     image: urnau/app1-php:prod-nginx-php-fpm8.2.3
     container_name: web
@@ -20,6 +10,10 @@ services:
         PHP_VERSION: '8.2.4-fpm-bullseye'
     volumes:
       - .:/var/www/app
-    ports:
-      - "8180:80" #http
-      - "4443:443" #https
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.evolution_api.rule=Host(`wordpress.byteqode.tech`)
+      - traefik.http.routers.evolution_api.entrypoints=websecure
+      - traefik.http.routers.evolution_api.tls.certresolver=le
+      - traefik.http.routers.evolution_api.service=wordpress_wordpress
+      - traefik.http.services.evolution_api.loadbalancer.server.port=80
