@@ -8,8 +8,6 @@ services:
       dockerfile: ./docker/Dockerfile
       args:
         PHP_VERSION: '8.2.4-fpm-bullseye'
-    volumes:
-      - .:/var/www/app
     labels:
       - traefik.enable=true
       - traefik.http.routers.evolution_api.rule=Host(`wordpress.byteqode.tech`)
